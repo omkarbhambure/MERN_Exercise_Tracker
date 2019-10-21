@@ -27,11 +27,11 @@ connection.once("open", () => {
 
 //Setup Routes
 
-//const exercisesRouter = require("./routes/exercises");
-//const usersRouter = require("./routes/users");
+const exercisesRouter = require("./routes/exercises");
+const usersRouter = require("./routes/users");
 
-//app.use("/exercises", exercisesRouter);
-//app.use("/users", usersRouter);
+app.use("/exercises", exercisesRouter);
+app.use("/users", usersRouter);
 
 //Setup the listener
 
