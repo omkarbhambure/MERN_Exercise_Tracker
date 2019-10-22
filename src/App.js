@@ -14,7 +14,7 @@ function App() {
     main: {
       marginTop: "85px",
       padding: "20px",
-      height: "60vh"
+      height: ""
     }
   });
 
@@ -24,7 +24,7 @@ function App() {
     <Router>
       <Navbar />
       <Container>
-        <Paper className={classes.main} square>
+        <Paper className={classes.main}>
           <Route path="/" exact component={ExercisesList} />
           <Route path="/edit/:id" component={EditExercise} />
           <Route path="/create" component={CreateExercise} />
