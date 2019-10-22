@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import {
   FormControl,
   Select,
@@ -26,9 +27,14 @@ export default class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      users: ["tester1"],
-      username: "test user"
+    //frontend-backend connection
+    axios.get("http://localhost:5000/users/").then(res => {
+      if (res.data.length > 0) {
+        this.setState({
+          users: res.data.map(user => user.username),
+          username: res.data[0].username
+        });
+      }
     });
   }
 
@@ -54,6 +60,10 @@ export default class CreateExercise extends Component {
     };
 
     console.log(exercise);
+    //frontend-backend connection
+    axios
+      .post("http://localhost:5000/exercises/add", exercise)
+      .then(res => console.log(res.data));
 
     window.location = "/";
   };
@@ -90,7 +100,7 @@ export default class CreateExercise extends Component {
           name="duration"
           value={this.state.duration}
           onChange={this.onChange}
-          label="Duration"
+          label="Duration (in minutes)"
           margin="normal"
         />
         <br />
