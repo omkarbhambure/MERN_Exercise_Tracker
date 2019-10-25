@@ -2,6 +2,8 @@
 
 A Full Stack project developed using MongoDB, Express.js, React.js and Node.js
 
+Primary goal was to get familiar with routing and to get comfortable with MaterialUI.
+
 ![Pic1](https://github.com/blablabluomie/MERN_Exercise_Tracker/blob/master/media/Pic1.PNG)
 
 ![URL1](https://github.com/blablabluomie/MERN_Exercise_Tracker/blob/master/media/URL1.PNG)
